@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya AI - Publications</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.appear { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-base-100 font-sans">
+<nav class="navbar bg-primary text-primary-content shadow-lg px-6">
+  <div class="flex-1">
+    <a href="index.html" class="btn btn-ghost normal-case text-xl">Satya AI</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 py-12">
+  <section class="text-center mb-12 fade-in">
+    <h1 class="text-5xl font-bold mb-4 text-primary">Publications</h1>
+    <p class="text-lg text-gray-600">Selected academic contributions and research publications.</p>
+    <div class="mt-6">
+      <img src="https://source.unsplash.com/900x300/?research,library" alt="Publications Banner" class="rounded-2xl shadow-lg mx-auto">
+    </div>
+  </section>
+  <section class="space-y-8 fade-in">
+    <div class="card lg:card-side bg-base-100 shadow-xl">
+      <figure><img src="https://source.unsplash.com/400x250/?ai,research" alt="Research Paper"></figure>
+      <div class="card-body">
+        <h2 class="card-title">Explainable AI for Healthcare Decision Support</h2>
+        <p>Explored methods like LIME and SHAP to enhance interpretability of machine learning models in clinical decision-making.</p>
+        <div class="card-actions">
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="card lg:card-side bg-base-100 shadow-xl">
+      <figure><img src="https://source.unsplash.com/400x250/?nlp,ai" alt="NLP Research"></figure>
+      <div class="card-body">
+        <h2 class="card-title">Advances in NLP using Large Language Models</h2>
+        <p>Researched the application of GPT and BERT in domain-specific conversational AI, with focus on healthcare and legal use cases.</p>
+        <div class="card-actions">
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="card lg:card-side bg-base-100 shadow-xl">
+      <figure><img src="https://source.unsplash.com/400x250/?computer,vision" alt="CV Research"></figure>
+      <div class="card-body">
+        <h2 class="card-title">Food Recognition with Deep Learning</h2>
+        <p>Published work on fine-tuning YOLOv8 for food recognition using FoodSeg103 dataset, enabling automated nutrition tracking.</p>
+        <div class="card-actions">
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer footer-center p-6 bg-primary text-primary-content mt-12">
+  <div>
+    <p>© 2025 Satya Muddamsetty. All rights reserved.</p>
+    <p>📧 <a href="mailto:satya.muddamsetty@outlook.com" class="link link-light">satya.muddamsetty@outlook.com</a> · <a href="https://www.linkedin.com/in/satyamuddamsetty" target="_blank" class="link link-light">LinkedIn</a> · <a href="https://github.com/satyamuddamsetty" target="_blank" class="link link-light">GitHub</a></p>
+  </div>
+</footer>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya AI - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.appear { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-base-100 font-sans">
+<nav class="navbar bg-primary text-primary-content shadow-lg px-6">
+  <div class="flex-1">
+    <a href="index.html" class="btn btn-ghost normal-case text-xl">Satya AI</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="max-w-5xl mx-auto px-4 py-12">
+  <section class="text-center mb-12 fade-in">
+    <h1 class="text-5xl font-bold mb-4 text-primary">Welcome to Satya AI</h1>
+    <p class="text-lg text-gray-600">Crafting smarter solutions through AI – from strategy to deployment.</p>
+    <div class="mt-6">
+      <img src="https://source.unsplash.com/900x300/?technology,futuristic" alt="AI Banner" class="rounded-2xl shadow-lg mx-auto">
+    </div>
+  </section>
+
+  <section class="grid md:grid-cols-3 gap-6 mb-16 fade-in">
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?consulting,meeting" alt="AI Strategy"></figure>
+      <div class="card-body">
+        <h3 class="card-title">🤖 AI Consulting & Strategy Development</h3>
+        <p class="text-sm">Plan your AI journey with expert insight and a tailored roadmap.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?developer,code" alt="AI Development"></figure>
+      <div class="card-body">
+        <h3 class="card-title">⚙️ AI Prototyping</h3>
+        <p class="text-sm">From ideas to working models – fast-track innovation with MVPs.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?nlp,conversation" alt="NLP"></figure>
+      <div class="card-body">
+        <h3 class="card-title">💬 NLP & LLMs</h3>
+        <p class="text-sm">Build intelligent chatbots and smart search with natural language AI.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-16 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-8 text-primary">My Expertise</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card shadow-lg p-6">
+        <h3 class="text-xl font-bold mb-2">🔹 Natural Language Processing (NLP)</h3>
+        <ul class="list-disc pl-5 text-sm">
+          <li>Sentiment Analysis & Text Classification</li>
+          <li>Chatbots & Conversational AI (LLMs, GPT, BERT, Rasa)</li>
+          <li>Named Entity Recognition (NER) & Keyword Extraction</li>
+          <li>Summarization & Topic Modeling</li>
+        </ul>
+      </div>
+      <div class="card shadow-lg p-6">
+        <h3 class="text-xl font-bold mb-2">🔹 Explainable AI (XAI)</h3>
+        <ul class="list-disc pl-5 text-sm">
+          <li>Model Interpretability & Fairness</li>
+          <li>LIME, SHAP, and Counterfactual Explanations</li>
+          <li>Bias Detection & Ethical AI Implementation</li>
+        </ul>
+      </div>
+      <div class="card shadow-lg p-6">
+        <h3 class="text-xl font-bold mb-2">🔹 Computer Vision</h3>
+        <ul class="list-disc pl-5 text-sm">
+          <li>Object Detection & Image Classification</li>
+          <li>OCR & Document Processing</li>
+          <li>Face Recognition & Gesture Analysis</li>
+          <li>Video Processing & Motion Tracking</li>
+        </ul>
+      </div>
+      <div class="card shadow-lg p-6">
+        <h3 class="text-xl font-bold mb-2">🔹 AI & Machine Learning</h3>
+        <ul class="list-disc pl-5 text-sm">
+          <li>Deep Learning (TensorFlow, PyTorch)</li>
+          <li>Model Optimization & Deployment</li>
+          <li>AI for Business Intelligence & Automation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-center">
+    <a href="services.html" class="btn btn-primary btn-wide">Explore My Services</a>
+  </section>
+</main>
+<footer class="footer footer-center p-6 bg-primary text-primary-content mt-12">
+  <div>
+    <p>© 2025 Satya Muddamsetty. All rights reserved.</p>
+    <p>📧 <a href="mailto:satya.muddamsetty@outlook.com" class="link link-light">satya.muddamsetty@outlook.com</a> · <a href="https://www.linkedin.com/in/satyamuddamsetty" target="_blank" class="link link-light">LinkedIn</a> · <a href="https://github.com/satyamuddamsetty" target="_blank" class="link link-light">GitHub</a></p>
+  </div>
+</footer>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+</body>
+</html>

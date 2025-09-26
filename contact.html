@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya AI - Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.appear { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-base-100 font-sans">
+<nav class="navbar bg-primary text-primary-content shadow-lg px-6">
+  <div class="flex-1">
+    <a href="index.html" class="btn btn-ghost normal-case text-xl">Satya AI</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 py-12">
+  <section class="text-center mb-12 fade-in">
+    <h1 class="text-5xl font-bold mb-4 text-primary">Get in Touch</h1>
+    <p class="text-lg text-gray-600">Have a project in mind or want to collaborate? Let’s connect.</p>
+    <div class="mt-6">
+      <img src="https://source.unsplash.com/900x300/?contact,communication" alt="Contact Banner" class="rounded-2xl shadow-lg mx-auto">
+    </div>
+  </section>
+
+  <section class="grid md:grid-cols-2 gap-8 fade-in">
+    <div class="card shadow-lg p-6">
+      <h3 class="text-2xl font-bold mb-4">📍 Contact Information</h3>
+      <p><strong>Email:</strong> <a href="mailto:satya.muddamsetty@outlook.com" class="link link-primary">satya.muddamsetty@outlook.com</a></p>
+      <p><strong>Location:</strong> Odense, Denmark</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/satyamuddamsetty" target="_blank" class="link link-primary">LinkedIn</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/satyamuddamsetty" target="_blank" class="link link-primary">GitHub</a></p>
+      <div class="mt-6">
+        <img src="https://source.unsplash.com/400x250/?map,denmark" alt="Map" class="rounded-lg shadow-md">
+      </div>
+    </div>
+
+    <div class="card shadow-lg p-6">
+      <h3 class="text-2xl font-bold mb-4">📬 Send a Message</h3>
+      <form class="grid gap-4" action="https://formspree.io/f/maykwnpw" method="POST">
+        <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full" required>
+        <input type="email" name="email" placeholder="Your Email" class="input input-bordered w-full" required>
+        <textarea name="message" placeholder="Message" class="textarea textarea-bordered w-full" rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary w-full">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="footer footer-center p-6 bg-primary text-primary-content mt-12">
+  <div>
+    <p>© 2025 Satya Muddamsetty. All rights reserved.</p>
+    <p>📧 <a href="mailto:satya.muddamsetty@outlook.com" class="link link-light">satya.muddamsetty@outlook.com</a> · <a href="https://www.linkedin.com/in/satyamuddamsetty" target="_blank" class="link link-light">LinkedIn</a> · <a href="https://github.com/satyamuddamsetty" target="_blank" class="link link-light">GitHub</a></p>
+  </div>
+</footer>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+</body>
+</html>

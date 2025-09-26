@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya AI - About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.appear { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-base-100 font-sans">
+<nav class="navbar bg-primary text-primary-content shadow-lg px-6">
+  <div class="flex-1">
+    <a href="index.html" class="btn btn-ghost normal-case text-xl">Satya AI</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="max-w-5xl mx-auto px-4 py-12">
+  <section class="text-center mb-12 fade-in">
+    <h1 class="text-4xl font-bold mb-4 text-primary">About Satya AI</h1>
+    <p class="text-lg text-gray-600">I help businesses leverage AI to solve real-world problems, from healthcare and fitness to legal and finance.</p>
+    <div class="mt-6">
+      <img src="https://source.unsplash.com/900x300/?ai,technology,person" alt="About AI" class="rounded-2xl shadow-lg mx-auto">
+    </div>
+  </section>
+
+  <section class="mb-12 fade-in">
+    <h2 class="text-3xl font-bold mb-4 text-primary">About Me</h2>
+    <p class="text-gray-700 leading-relaxed">
+      I am Satya Muddamsetty, an AI freelancer with over 10 years of experience in developing AI solutions, NLP systems, computer vision applications, predictive analytics models, and explainable AI. I specialize in transforming business challenges into innovative AI-driven solutions.
+    </p>
+  </section>
+
+  <section class="grid md:grid-cols-2 gap-6 fade-in">
+    <div class="card shadow-lg p-6">
+      <h3 class="text-xl font-bold mb-2">🎯 Vision</h3>
+      <p>To build AI systems that are ethical, explainable, and transformative for real-world applications, bridging the gap between research and practical deployment.</p>
+    </div>
+    <div class="card shadow-lg p-6">
+      <h3 class="text-xl font-bold mb-2">🏆 Experience</h3>
+      <p>Over a decade in AI research and teaching, specializing in NLP, computer vision, deep learning, and AI model deployment. Worked with multiple clients to deliver AI solutions from prototyping to production.</p>
+    </div>
+  </section>
+</main>
+<footer class="footer footer-center p-6 bg-primary text-primary-content mt-12">
+  <div>
+    <p>© 2025 Satya Muddamsetty. All rights reserved.</p>
+    <p>📧 <a href="mailto:satya.muddamsetty@outlook.com" class="link link-light">satya.muddamsetty@outlook.com</a> · <a href="https://www.linkedin.com/in/satyamuddamsetty" target="_blank" class="link link-light">LinkedIn</a> · <a href="https://github.com/satyamuddamsetty" target="_blank" class="link link-light">GitHub</a></p>
+  </div>
+</footer>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya AI - Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.appear { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-base-100 font-sans">
+<nav class="navbar bg-primary text-primary-content shadow-lg px-6">
+  <div class="flex-1">
+    <a href="index.html" class="btn btn-ghost normal-case text-xl">Satya AI</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 py-12">
+  <section class="text-center mb-12 fade-in">
+    <h1 class="text-5xl font-bold mb-4 text-primary">Services I Offer</h1>
+    <p class="text-lg text-gray-600">I provide end-to-end AI solutions tailored to your business needs.</p>
+    <div class="mt-6">
+      <img src="https://source.unsplash.com/900x300/?services,ai" alt="AI Services" class="rounded-2xl shadow-lg mx-auto">
+    </div>
+  </section>
+
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?consulting,teamwork" alt="AI Consulting"></figure>
+      <div class="card-body">
+        <h3 class="card-title">🤖 AI Consulting & Strategy Development</h3>
+        <p>Helping you identify AI opportunities and design a tailored roadmap for successful implementation.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?ai,development" alt="AI Development"></figure>
+      <div class="card-body">
+        <h3 class="card-title">⚙️ Custom AI Model Development & Deployment</h3>
+        <p>Building and deploying scalable AI models optimized for your specific use case.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?chatbot,ai" alt="NLP Chatbots"></figure>
+      <div class="card-body">
+        <h3 class="card-title">💬 NLP-based Chatbots & Voice Assistants</h3>
+        <p>Creating conversational AI solutions powered by LLMs and advanced NLP frameworks.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?explainable,ai" alt="XAI"></figure>
+      <div class="card-body">
+        <h3 class="card-title">🔎 AI Audits & Explainability Solutions (XAI)</h3>
+        <p>Improving transparency and trust with explainable AI, fairness checks, and bias detection.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?computer,vision" alt="Computer Vision"></figure>
+      <div class="card-body">
+        <h3 class="card-title">👁️ Computer Vision Applications</h3>
+        <p>From image classification to video processing, I deliver cutting-edge vision-based solutions.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?prototype,innovation" alt="AI Prototyping"></figure>
+      <div class="card-body">
+        <h3 class="card-title">⚡ AI Research & Prototyping</h3>
+        <p>Rapid prototyping and research support to transform innovative AI ideas into real solutions.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer footer-center p-6 bg-primary text-primary-content mt-12">
+  <div>
+    <p>© 2025 Satya Muddamsetty. All rights reserved.</p>
+    <p>📧 <a href="mailto:satya.muddamsetty@outlook.com" class="link link-light">satya.muddamsetty@outlook.com</a> · <a href="https://www.linkedin.com/in/satyamuddamsetty" target="_blank" class="link link-light">LinkedIn</a> · <a href="https://github.com/satyamuddamsetty" target="_blank" class="link link-light">GitHub</a></p>
+  </div>
+</footer>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+</body>
+</html>

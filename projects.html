@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya AI - Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.appear { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-base-100 font-sans">
+<nav class="navbar bg-primary text-primary-content shadow-lg px-6">
+  <div class="flex-1">
+    <a href="index.html" class="btn btn-ghost normal-case text-xl">Satya AI</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 py-12">
+  <section class="text-center mb-12 fade-in">
+    <h1 class="text-5xl font-bold mb-4 text-primary">Projects</h1>
+    <p class="text-lg text-gray-600">A showcase of AI solutions and prototypes I've built.</p>
+    <div class="mt-6">
+      <img src="https://source.unsplash.com/900x300/?projects,technology" alt="Projects Banner" class="rounded-2xl shadow-lg mx-auto">
+    </div>
+  </section>
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?food,ai" alt="Food Recognition"></figure>
+      <div class="card-body">
+        <h3 class="card-title">🍽️ AI-Powered Food Recognition</h3>
+        <p>Built a computer vision model using YOLOv8 to detect and classify food items, integrated with a nutritional database for calorie estimation.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?healthcare,ai" alt="Healthcare AI"></figure>
+      <div class="card-body">
+        <h3 class="card-title">🏥 Predictive Healthcare Analytics</h3>
+        <p>Developed ML models to predict early health risks using patient data, ensuring GDPR compliance and explainability (XAI).</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?chatbot,nlp" alt="Legal Chatbot"></figure>
+      <div class="card-body">
+        <h3 class="card-title">💬 Legal AI Chatbot</h3>
+        <p>Designed an NLP-based chatbot for legal document search and client interaction using GPT + Rasa, reducing manual workload for lawyers.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?fitness,app" alt="Fitness AI"></figure>
+      <div class="card-body">
+        <h3 class="card-title">🏋️ Personalized Fitness & Nutrition App</h3>
+        <p>Created an AI-powered app for personalized workout tracking, meal planning, and activity recommendations using ML & computer vision.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?document,ocr" alt="Document AI"></figure>
+      <div class="card-body">
+        <h3 class="card-title">📄 Document AI & OCR Automation</h3>
+        <p>Developed a computer vision pipeline for OCR-based document processing, invoice extraction, and contract summarization.</p>
+      </div>
+    </div>
+    <div class="card shadow-lg image-full">
+      <figure><img src="https://source.unsplash.com/400x250/?ai,research" alt="AI Research"></figure>
+      <div class="card-body">
+        <h3 class="card-title">🔬 AI Research & Prototyping</h3>
+        <p>Rapid AI prototyping projects exploring LLM fine-tuning, multimodal AI, and explainability frameworks for real-world applications.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer footer-center p-6 bg-primary text-primary-content mt-12">
+  <div>
+    <p>© 2025 Satya Muddamsetty. All rights reserved.</p>
+    <p>📧 <a href="mailto:satya.muddamsetty@outlook.com" class="link link-light">satya.muddamsetty@outlook.com</a> · <a href="https://www.linkedin.com/in/satyamuddamsetty" target="_blank" class="link link-light">LinkedIn</a> · <a href="https://github.com/satyamuddamsetty" target="_blank" class="link link-light">GitHub</a></p>
+  </div>
+</footer>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+</body>
+</html>
